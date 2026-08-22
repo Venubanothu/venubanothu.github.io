@@ -1752,6 +1752,17 @@
       }
     }
   </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B6PZWDD2WD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-B6PZWDD2WD');
+  </script>
+
 </head>
 
 <body>
@@ -2144,7 +2155,8 @@
               <ul>
                 <li>Designed and built a reliable end-to-end transport protocol directly over raw UDP in
                   <strong>C</strong>
-                  using circular ring buffers for ordered 512-byte packet delivery.</li>
+                  using circular ring buffers for ordered 512-byte packet delivery.
+                </li>
                 <li>Architected a multi-threaded daemon using <strong>POSIX Threads</strong> and <strong>Shared Memory
                     IPC</strong> for asynchronous socket polling and non-blocking execution.</li>
                 <li>Implemented <strong>Go-Back-N ARQ</strong>, dynamic flow control, timeout retransmissions, and clean
