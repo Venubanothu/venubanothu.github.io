@@ -6,17 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Banothu Venu — Computer Science & Engineering, IIT Kharagpur</title>
   <meta name="description"
-    content="Portfolio of Banothu Venu — Full-Stack & Systems Engineer, Dual Degree CSE student at IIT Kharagpur (AIR 75 JEE Adv). Explore projects, research in RISC-V, skills, and leadership.">
+    content="Portfolio of Banothu Venu — Full-Stack & Systems Engineer, 4th Year Dual Degree CSE student at IIT Kharagpur (AIR 75 JEE Adv). Explore projects, research in RISC-V, skills, and leadership.">
   <meta name="keywords"
     content="Banothu Venu, IIT Kharagpur, Computer Science, Full Stack Developer, Systems Engineer, RISC-V, C++, React, Python">
   <meta name="author" content="Banothu Venu">
+
+  <link rel="icon" type="image/jpeg" href="profile.jpg">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Banothu Venu — CS Engineer, IIT Kharagpur">
   <meta property="og:description"
-    content="Full-Stack & Systems Engineer, Dual Degree CSE at IIT Kharagpur. Exploring RISC-V Architecture, Distributed Systems, and Modern Web Applications.">
+    content="Full-Stack & Systems Engineer, 4th Year Dual Degree CSE at IIT Kharagpur. Exploring RISC-V Architecture, Distributed Systems, and Modern Web Applications.">
+  <meta property="og:image" content="https://venubanothu.github.io/profile.jpg">
   <meta property="og:url" content="https://venubanothu.github.io/">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Banothu Venu — CS Engineer, IIT Kharagpur">
+  <meta name="twitter:description"
+    content="Full-Stack & Systems Engineer, 4th Year Dual Degree CSE at IIT Kharagpur.">
+  <meta name="twitter:image" content="https://venubanothu.github.io/profile.jpg">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -227,6 +236,15 @@
       font-weight: 700;
       box-shadow: 0 4px 12px var(--gold-dim);
       transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .nav-avatar-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .nav-brand:hover .nav-logo-badge {
@@ -465,11 +483,21 @@
       display: inline-flex;
       align-items: center;
       gap: 0.8rem;
-      padding: 0.4rem 1rem;
+      padding: 0.35rem 1rem 0.35rem 0.4rem;
       background: var(--gold-dim);
       border: 1px solid var(--surface-border);
       border-radius: var(--radius-pill);
       margin-bottom: 1.8rem;
+    }
+
+    .hero-eyebrow-avatar {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1.5px solid var(--gold);
+      flex-shrink: 0;
+      display: block;
     }
 
     .status-pulse {
@@ -870,6 +898,97 @@
       transform: translateY(-2px);
       box-shadow: var(--card-hover-shadow);
       border-color: var(--gold);
+    }
+
+    /* Portrait Showcase Card in About */
+    .about-portrait-card {
+      background: linear-gradient(145deg, var(--surface), var(--bg-alt));
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius-lg);
+      padding: 1.1rem;
+      box-shadow: var(--card-shadow);
+      transition: all var(--transition-normal);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 0.2rem;
+    }
+
+    .about-portrait-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-3px);
+      box-shadow: var(--card-hover-shadow);
+    }
+
+    .portrait-img-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1.18;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .portrait-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      transition: transform var(--transition-slow);
+      display: block;
+    }
+
+    .about-portrait-card:hover .portrait-img {
+      transform: scale(1.03);
+    }
+
+    .portrait-status-badge {
+      position: absolute;
+      bottom: 0.75rem;
+      left: 0.75rem;
+      right: 0.75rem;
+      background: rgba(9, 11, 16, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius-pill);
+      padding: 0.4rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--text-main);
+      letter-spacing: 0.04em;
+    }
+
+    [data-theme="light"] .portrait-status-badge {
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--text-main);
+      border-color: var(--surface-border);
+    }
+
+    .portrait-caption {
+      margin-top: 0.9rem;
+      padding: 0 0.3rem 0.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .portrait-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.25rem;
+      color: var(--text-main);
+      line-height: 1.2;
+    }
+
+    .portrait-role {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
     }
 
     .achievement-icon {
@@ -1777,7 +1896,9 @@
   <!-- Navigation Bar -->
   <nav id="navbar">
     <a class="nav-brand" href="#hero">
-      <div class="nav-logo-badge">BV</div>
+      <div class="nav-logo-badge">
+        <img src="profile.jpg" alt="Banothu Venu" class="nav-avatar-img">
+      </div>
       <div class="nav-brand-text">
         <span class="nav-brand-name">Banothu Venu</span>
         <span class="nav-brand-role">IIT Kharagpur · CSE</span>
@@ -1837,8 +1958,9 @@
     <div class="hero-container">
       <div class="hero-content">
         <div class="hero-eyebrow">
+          <img src="profile.jpg" alt="Banothu Venu" class="hero-eyebrow-avatar">
           <div class="status-pulse"></div>
-          <span>IIT Kharagpur · CSE Dual Degree (2023–2028)</span>
+          <span>IIT Kharagpur · 4th Year CSE Dual Degree (2023–2028)</span>
         </div>
 
         <h1 class="hero-name">
@@ -1926,7 +2048,7 @@
       <div class="about-grid">
         <div class="about-text reveal">
           <p>
-            I'm <strong>Banothu Venu</strong>, a third-year Dual Degree (B.Tech + M.Tech) student in Computer Science
+            I'm <strong>Banothu Venu</strong>, a fourth-year Dual Degree (B.Tech + M.Tech) student in Computer Science
             &amp; Engineering at <strong>IIT Kharagpur</strong>.
           </p>
           <p>
@@ -1954,6 +2076,20 @@
         </div>
 
         <div class="about-aside reveal">
+          <div class="about-portrait-card">
+            <div class="portrait-img-wrapper">
+              <img src="profile.jpg" alt="Banothu Venu" class="portrait-img" loading="lazy">
+              <div class="portrait-status-badge">
+                <span class="status-pulse"></span>
+                <span>4th Year CSE · IIT Kharagpur</span>
+              </div>
+            </div>
+            <div class="portrait-caption">
+              <div class="portrait-name">Banothu Venu</div>
+              <div class="portrait-role">Full-Stack &amp; Systems Engineer</div>
+            </div>
+          </div>
+
           <div class="info-card">
             <div class="info-card-label">Primary Email</div>
             <div class="info-card-value">
@@ -2532,7 +2668,7 @@
         <!-- College -->
         <div class="edu-card featured reveal">
           <div>
-            <h3 class="edu-degree">B.Tech + M.Tech Dual Degree, CSE</h3>
+            <h3 class="edu-degree">B.Tech + M.Tech Dual Degree, CSE (4th Year)</h3>
             <div class="edu-school">Indian Institute of Technology, Kharagpur</div>
             <div class="edu-period">Aug 2023 – Apr 2028 · Kharagpur, WB</div>
             <div class="edu-detail">
@@ -2541,7 +2677,7 @@
               Linear Algebra, Probability &amp; Statistics.
             </div>
           </div>
-          <span class="edu-badge">🎓 5-Year Integrated Dual Degree</span>
+          <span class="edu-badge">🎓 5-Year Integrated Dual Degree · 4th Year</span>
         </div>
 
         <!-- Class XII -->
